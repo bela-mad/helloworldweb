@@ -19,7 +19,7 @@ public class PessoaJuridica extends PessoaHeranca{
 	}
 	
 	public void validarCnpj() {
-		\\TODO
+		//TODO
 	}
 	
 	public String getCnpj() {

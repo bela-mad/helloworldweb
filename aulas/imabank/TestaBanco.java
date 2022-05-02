@@ -21,13 +21,28 @@ public class TestaBanco {
 //		System.out.println("Profissão: " + pessoaNumero2.profissão);
 //		System.out.println("CPF: " + pessoaNumero2.cpf);
 		
+		Pessoa pessoaComConstrutor1 = new Pessoa("João dos Tomates",
+				"259.800.966-55","123.456-78");
+		
+//		System.out.println("Nome: "+ pessoaComConstrutor1.getNome());
+//		System.out.println("CPF: "+ pessoaComConstrutor1.getCpf());
+//		System.out.println("RG: "+ pessoaComConstrutor1.getRg());
+		
+		PessoaFisica pfIsabela = new PessoaFisica();
+		pfIsabela.setNome("Isabela Argolo");
+		pfIsabela.setEmail("isabela@digitalhouse.com");
+		pfIsabela.setTelefone("25595522556");
+		pfIsabela.setCpf("061.905.611-87");
+		pfIsabela.setProfissao("Desenvolvedora");
+		pfIsabela.setRg("22.678.127-6");
+		
 		Conta conta1 = new Conta();
 		conta1.setAgencia(1234);
 		conta1.setNumeroConta(7889);
-		conta1.setSaldo(1000000.50); >>não se deve alterar diretamente essa informação, ela apenas pode ser exibida
-		conta1.setTitular("Isabela Argolo");
+	//	conta1.setSaldo(1000000.50); >>não se deve alterar diretamente essa informação, ela apenas pode ser exibida
+		conta1.setTitular(pfIsabela);
 		
-		conta1.depositar(100.0);
+		conta1.depositar(100000.0);
 		
 		System.out.println("Agencia: " + conta1.getAgencia());
 		System.out.println("Conta: " + conta1.getNumeroConta());
@@ -52,6 +67,14 @@ public class TestaBanco {
 		System.out.println("Saldo Atual conta1: " + conta1.getSaldo());
 		System.out.println("Saldo Atual conta2: " + conta2.getSaldo());
 		
+		ContaCorrente cc1 = new ContaCorrente();
+		cc1.depositar(1000);
+		System.out.println("Saldo: "+cc1.getSaldo());
+		System.out.println("Limite: "+cc1.getLimite());
+		System.out.println("Saldo com Limite: "+cc1.getSaldoComLimite());
+		cc1.sacar(1500);
+		System.out.println("Saldo: " + cc1.getSaldo());
+		System.out.println("Saldo com Limite: "+cc1.getSaldoComLimite());
 		
 	}
 }
