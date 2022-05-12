@@ -29,5 +29,22 @@ public class Gerente extends Funcionario implements AcessoInterno{
 		}
 		return false;
 	}
+	
+	@Override
+	public boolean mudarSenha(String senhaAntiga, String senhaNova) {
+		if (this.senha.equals(senhaAntiga) && senhaNova.length()==8) {
+			this.senha = senhaNova;
+			return true;
+		}
+		return false;
+	}
 
+	@Override
+	public boolean mudarUsuario(String usuarioAntigo, String usuarioNovo) {
+		if (this.usuario.equals(usuarioAntigo) && usuarioNovo.length()==12) {
+			this.usuario = usuarioNovo;
+			return true;
+		}
+		return false;
+	}
 }
