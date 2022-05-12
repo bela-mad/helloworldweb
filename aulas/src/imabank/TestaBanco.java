@@ -94,5 +94,7 @@ public class TestaBanco {
 			System.out.println("\nUsuario ou senha invalidos");
 		}
 		
+		System.out.println("Para trocar a sua senha, informe a antiga:");
+		senhaNova
 	}
 }
