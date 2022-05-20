@@ -60,14 +60,10 @@ public class TestaStreams {
 				.noneMatch((elemento) -> elemento.contains("w"))
 		);
 		
-		//retorna um valor booleano de acordo com o criterio da busca (se ninguem possuir o elemento)
-				System.out.println("Ninguem possui a letra w no nome? " + estudantes.stream()
-						.noneMatch((elemento) -> elemento.contains("w"))
-				);
-		
-		
-		
-		
-		
+		//retorna uma nova coleção com o tamanho de cada nome
+		System.out.println("Nova coleçao com tamanho: " + estudantes.stream()
+				.map((estudante) -> estudante.concat(" - ").concat(String.valueOf(estudante.length())))
+				.collect(Collectors.toList())
+		);
 	}
 }
