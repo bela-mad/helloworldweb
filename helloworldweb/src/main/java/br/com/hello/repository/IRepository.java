@@ -2,7 +2,7 @@ package br.com.hello.repository;
 
 import java.util.List;
 
-public interface IRepository<T> {
+public interface IRepository<T> { //Generics
 
 	public void save(T tipo); //inserir dados
 	public void delete(Integer id); //excluir dados
